@@ -1,0 +1,25 @@
+/* Header styling */
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Profile image */
+header img {
+    width: 200px;
+    border-radius: 10%;
+}
+
+/* Download CV button */
+header a {
+    padding: 10px 20px;
+    background-color: #074d99;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+header a:hover {
+    background-color: #4596ec;
+}

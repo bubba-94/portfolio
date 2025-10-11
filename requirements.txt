@@ -1,0 +1,11 @@
+Django
+gunicorn
+plotly[express]
+pandas
+django-tailwind
+django-browser-reload
+
+
+# Later in Docker
+# npm install 
+# npm init -y 

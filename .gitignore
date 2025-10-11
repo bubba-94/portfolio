@@ -1,36 +1,95 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# VSCode / PyCharm / IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
-# testing
-/coverage
+# Testing
+.coverage
+*.cover
+coverage.xml
+htmlcov/
+pytest_cache/
+.tox/
+.nox/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+__coverage__/
 
-# next.js
-/.next/
-/out/
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints
+*.ipynb
 
-# production
-/build
+# Large data files
+data/
+datasets/
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.parquet
+*.feather
+*.h5
+*.json
+*.pickle
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Dependencies & build cache
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnp/
+.pnp.js
+.cache/
+dist/
+build/
+coverage/
 
-# local env files
-.env*.local
+# Dependencies & build cache
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+.cache/
+dist/
+build/
+coverage/
+
+# Tailwind source cache (if any)
+theme/static_src/node_modules/
+theme/static_src/.cache/
+theme/static_src/dist/
+theme/static_src/package-lock.json
+
+# Local development settings (if any)
 .env
+.env.local
+*.env
+*.env.*
 
-# vercel
-.vercel
+# Django stuff
+*.log
+db.sqlite3
+db.sqlite3-journal
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.pkl
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
