@@ -18,6 +18,6 @@ def home(request):
 
     context = {
         "graph_html": graph_html,
-        "profile_image": "images/profile.jpg",  # Place your image in static/cv_app/images/
+        "profile_image": "static/cv_app/images/moi.jpg",  # Place your image in static/cv_app/images/
     }
     return render(request, 'cv_app/home.html', context)
