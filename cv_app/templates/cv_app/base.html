@@ -22,15 +22,22 @@
         {% block content %}{% endblock %}
     </main>
 
-    <!-- -----------------------------------FOOTER----------------------------------- -->
-    <footer class="bg-gray-100 py-10 text-center text-gray-500 text-xl">
-        © <span id="year"></span> Johan Modin · Built using Django, TailwindCSS and AI
+    <!---FOOTER--->
+
+    <footer class="bg-gray-300 py-10 text-center text-gray-600 text-lg border-t-2 border-orange-400">
+        <p class="mb-2">
+            © <span id="year"></span> Johan Modin
+        </p>
+        <p>
+            Built with <span class="font-semibold text-blue-700">Python Django</span> ·
+            <span class="font-semibold text-teal-600">Tailwind CSS</span> ·
+            <span class="font-semibold text-indigo-600">AI</span>
+        </p>
     </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-
 </body>
 
 </html>
