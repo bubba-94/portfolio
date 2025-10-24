@@ -8,4 +8,4 @@ I will post different projects and further develop the website as my confidence 
 
 Link to script [run.sh](run.sh) that will start a .venv and run an automatic updater for the website so that you can test changes in real time. 
 
-Application is run with Django and TailwindCSS.
+Application is built with Django and TailwindCSS.
