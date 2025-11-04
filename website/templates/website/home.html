@@ -1,0 +1,18 @@
+{% extends "website/base.html" %}
+
+{% block title %}JM's Portfolio{% endblock %}
+
+{% block website_base %}
+  {% include "website/sections/hero.html" %}
+  {% include "website/sections/about.html" %}
+  {% include "website/sections/projects.html" %}
+  {% include "website/sections/contact.html" %}
+{% endblock %}
+
+{% block project_cards %}
+  {% include "project_cards/chas_card.html" %}
+  {% include "project_cards/flaggr_card.html" %}
+  {% include "project_cards/internship_card.html" %}
+  {% include "project_cards/portfolio_card.html" %}
+  {% include "project_cards/progkomvux_card.html" %}
+{% endblock %}

@@ -26,7 +26,7 @@ urlpatterns = [
     
     # Endpoints
     path('admin/', admin.site.urls),
-    path('', include('cv_app.urls')),
+    path('', include('website.urls')),
 ]
 
 if settings.DEBUG:

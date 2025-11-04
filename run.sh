@@ -20,6 +20,7 @@ python manage.py tailwind start &
 # Store the Process ID (PID) of the background job
 TAILWIND_PID=$!
 
+# Starts django local server
 echo "Starting Django server..."
 python manage.py runserver
 
