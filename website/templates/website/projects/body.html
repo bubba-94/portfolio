@@ -1,0 +1,70 @@
+
+<div class="max-w-[2000px] mx-auto px-12 relative z-10">
+    <h2 class="text-5xl font-semibold text-white mb-20 text-center drop-shadow-lg">
+        Featured Projects
+    </h2>
+
+    <!-- Wrapper: keeps arrows aligned while content scrolls -->
+    <div class="relative flex items-center">
+        
+        <!-- Left button -->
+        <button id="scrollLeft"
+            class="absolute -left-4 md:-left-10 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-20">
+            ←
+        </button>
+
+        <!-- Scroll container -->
+        <div id="projectScroll"
+            class="flex gap-10 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-20 no-scrollbar relative w-full px-16">
+            
+            {% include "website/projects/project_cards/chas_card.html" %}
+            {% include "website/projects/project_cards/internship_card.html" %}
+            {% include "website/projects/project_cards/portfolio_card.html" %}
+            {% include "website/projects/project_cards/flaggr_card.html" %}
+            {% include "website/projects/project_cards/progkomvux_card.html" %}
+        </div>
+
+        <!-- Right button -->
+        <button id="scrollRight"
+            class="absolute -right-4 md:-right-10 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-20">
+            →
+        </button>
+    </div>
+</div>
+
+<script>
+    const scrollContainer = document.getElementById('projectScroll');
+    const scrollLeft = document.getElementById('scrollLeft');
+    const scrollRight = document.getElementById('scrollRight');
+
+    const scrollAmount = 600; // how far to scroll each click
+
+    scrollLeft.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    scrollRight.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    // Optional: dynamically hide arrows at edges
+    const updateArrows = () => {
+        scrollLeft.style.opacity = scrollContainer.scrollLeft > 0 ? '1' : '0.3';
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        scrollRight.style.opacity = scrollContainer.scrollLeft >= maxScroll ? '0.3' : '1';
+    };
+
+    scrollContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    updateArrows(); // initial
+</script>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>

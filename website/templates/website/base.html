@@ -1,8 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<!-- -----------------------------------BASE----------------------------------- -->
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,32 +10,73 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            padding-bottom: 5rem; /* footer height spacing */
         }
     </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="relative bg-gradient-to-r from-gray-800 to-blue-500 flex flex-col justify-center items-center text-center min-h-screen py-20 border-t-2 border-orange-400 overflow-hidden">
 
-    <main>
-        {% block website_base %}{% endblock %}
+    <!-- Background accents -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="bg-orange-400 opacity-40 rounded-full w-72 h-72 absolute -top-16 -left-16 animate-pulse"></div>
+        <div class="bg-blue-500 opacity-10 rounded-full w-96 h-96 absolute -bottom-20 -right-20 animate-pulse"></div>
+    </div>
+
+    <!-- Top-right endpoints button -->
+    <div class="fixed top-4 right-4 z-30">
+        <button id="endpointsBtn" class="bg-gray-900/70 text-gray-200 px-3 py-2 rounded-md text-sm hover:bg-gray-800 transition">
+            ☰
+        </button>
+        <ul id="endpointsList" class="hidden mt-2 bg-gray-900/90 text-gray-200 text-sm rounded-md shadow-md py-2 w-40 text-left">
+            <li><a href="{% url 'home' %}" class="block px-3 py-1 hover:bg-orange-500/20">Home</a></li>
+            <li><a href="{% url 'about' %}" class="block px-3 py-1 hover:bg-orange-500/20">About</a></li>
+            <li><a href="{% url 'projects' %}" class="block px-3 py-1 hover:bg-orange-500/20">Projects</a></li>
+            <li class="block px-3 py-1 text-gray-400 font-semibold mt-1">CV</li>
+            <li><a href="{% url 'cv' %}" class="block px-5 py-1 hover:bg-orange-500/20">English</a></li>
+            <li><a href="{% url 'cv' %}" class="block px-5 py-1 hover:bg-orange-500/20">Swedish</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <main class="w-full max-w-5xl">
+        {% block content %}{% endblock %}
     </main>
 
-    <!---FOOTER--->
-
-    <footer class="bg-gray-300 py-10 text-center text-gray-600 text-lg border-t-2 border-orange-400">
-        <p class="mb-2">
+    <!-- Footer -->
+    <footer class="fixed bottom-0 left-0 w-full bg-gray-900 py-4 text-center text-gray-300 text-lg border-t-2 border-orange-400 z-10">
+        <p class="mb-1">
             © <span id="year"></span> Johan Modin
+            <a href="mailto:carljohan.modin@gmail.com" 
+               class="inline-block bg-orange-500/70 text-white text-sm font-medium px-1 py-1 rounded-md hover:bg-orange-500/90 transition ml-2">
+                📧 Email Me
+            </a>
         </p>
-        <p>
-            Built with <span class="font-semibold text-blue-700">Python Django</span> ·
-            <span class="font-semibold text-teal-600">Tailwind CSS</span> ·
-            <span class="font-semibold text-indigo-600">AI</span>
+        <p class="text-sm">
+            Built with <span class="font-semibold text-blue-400">Python Django</span> ·
+            <span class="font-semibold text-teal-400">Tailwind CSS</span> ·
+            <span class="font-semibold text-indigo-400">AI</span>
         </p>
     </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-</body>
 
+        // Toggle endpoints menu
+        const btn = document.getElementById('endpointsBtn');
+        const list = document.getElementById('endpointsList');
+
+        btn.addEventListener('click', () => {
+            list.classList.toggle('hidden');
+        });
+
+        // Optional: close menu when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!btn.contains(e.target) && !list.contains(e.target)) {
+                list.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
 </html>

@@ -4,6 +4,12 @@ from django.http import FileResponse
 import plotly.express as px
 
 def home(request):
+    return render(request, 'website/home/base.html')
+
+def cv(request):
+    return render(request, 'website/cv/base.html')
+
+def about(request):
     tech_categories = [
         {
             "title": "Languages",
@@ -43,5 +49,11 @@ def home(request):
             ],
         },
     ]
+    return render(request, 'website/about/base.html', {"tech_categories": tech_categories})
 
-    return render(request, 'website/home.html', {"tech_categories": tech_categories})
+def projects(request):
+    return render(request, 'website/projects/base.html')
+
+def contact(request):
+    return render(request, 'website/contact/base.html')
+    

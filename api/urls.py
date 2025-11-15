@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    # 
+    # Browser reload of debugging in real time
     path("__reload__/", include("django_browser_reload.urls")),
     
     # Endpoints

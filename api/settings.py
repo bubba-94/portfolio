@@ -37,7 +37,7 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-TAILWIND_APP_NAME = 'graphic'
+TAILWIND_APP_NAME = 'graphics'
 
 # Application definition
 
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'website',
     'tailwind',
-    'graphic'
+    'graphics'
 ]
 
 MIDDLEWARE = [
