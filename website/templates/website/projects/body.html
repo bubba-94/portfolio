@@ -1,34 +1,38 @@
-
-<div class="max-w-[2000px] mx-auto px-12 relative z-10">
-    <h2 class="text-5xl font-semibold text-white mb-20 text-center drop-shadow-lg">
-        Featured Projects
-    </h2>
-
-    <!-- Wrapper: keeps arrows aligned while content scrolls -->
-    <div class="relative flex items-center">
-        
-        <!-- Left button -->
-        <button id="scrollLeft"
-            class="absolute -left-4 md:-left-10 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-20">
-            ←
-        </button>
-
-        <!-- Scroll container -->
-        <div id="projectScroll"
-            class="flex gap-10 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-20 no-scrollbar relative w-full px-16">
+<div class="w-full flex justify-center">
+    <div class="px-12 py-28 relative z-10 w-[clamp(75rem,85vw,110rem)]">
             
-            {% include "website/projects/project_cards/chas_card.html" %}
-            {% include "website/projects/project_cards/internship_card.html" %}
-            {% include "website/projects/project_cards/portfolio_card.html" %}
-            {% include "website/projects/project_cards/flaggr_card.html" %}
-            {% include "website/projects/project_cards/progkomvux_card.html" %}
-        </div>
-
-        <!-- Right button -->
-        <button id="scrollRight"
+                <h2 class="text-5xl font-lexend-medium text-white mb-20 text-center drop-shadow-lg">
+                    Featured Projects
+                </h2>
+                
+                <!-- Wrapper: keeps arrows aligned while content scrolls -->
+                <div class="relative flex items-center justify-center">
+                    
+                    <!-- Left button -->
+                    <button id="scrollLeft"
+                    class="absolute -left-4 md:-left-10 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-20">
+                    ←
+                </button>
+                
+                <!-- Scroll container -->
+                <div id="projectScroll"
+                class="flex gap-10 overflow-x-auto scroll-smooth snap-x snap-mandatory
+                no-scrollbar w-full pb-20 px-12 mx-auto">
+                
+                {% include "website/projects/project_cards/chas_card.html" %}
+                {% include "website/projects/project_cards/raspberry-sdl2.html" %}
+                {% include "website/projects/project_cards/internship_card.html" %}
+                {% include "website/projects/project_cards/portfolio_card.html" %}
+                {% include "website/projects/project_cards/flaggr_card.html" %}
+                {% include "website/projects/project_cards/progkomvux_card.html" %}
+            </div>
+            
+            <!-- Right button -->
+            <button id="scrollRight"
             class="absolute -right-4 md:-right-10 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-20">
             →
-        </button>
+            </button>
+        </div>
     </div>
 </div>
 
